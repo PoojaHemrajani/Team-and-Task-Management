@@ -4,7 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
-import React from 'react'
+import React, { useState } from 'react'
 
 const Form = () => {
   const [privacy, setprivacy] = React.useState("");
@@ -13,10 +13,10 @@ const Form = () => {
     setprivacy(event.target.value);
   };
   return (
-    <form onSubmit="new_project_func()" method="post">
+    <Form action="http://127.0.0.1:5000/projects" method="POST">
       <TextField
         sx={{ m: 1 }}
-        name="image"
+        name="img"
         type="file"
         id="outlined-basic"
         label="Image"
@@ -40,7 +40,7 @@ const Form = () => {
       />
       <TextField
         sx={{ m: 1 }}
-        name="description"
+        name="desc"
         type="text"
         id="outlined-basic"
         label="Description"
@@ -63,7 +63,7 @@ const Form = () => {
       <Button sx={{ m: 1 }} type="submit" variant="contained">
         Save
       </Button>
-    </form>
+    </Form>
   );
 };
 
